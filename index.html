@@ -1,0 +1,249 @@
+下面給你第二種完全不同風格的履歷模板——極簡側欄雙欄位設計，很受外商銀行、證券公司、四大會計師事務所青睞，視覺乾淨俐落，適合印出來或直接寄PDF。
+直接複製存成 resume-v2.html 就能用！
+HTML<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>你的姓名 - 個人履歷</title>
+    <style>
+        :root {
+            --sidebar: #1a2a44;     /* 深藍 */
+            --accent: #00d4aa;      /* 亮青綠（超顯眼） */
+            --light: #f8f9fa;
+            --gray: #666;
+        }
+        
+        body {
+            margin: 0;
+            font-family: "微軟正黑體", "Microsoft JhengHei", -apple-system, sans-serif;
+            background: #f1f1f1;
+            color: #333;
+            line-height: 1.7;
+        }
+        
+        .resume {
+            display: flex;
+            max-width: 1000px;
+            margin: 30px auto;
+            background: white;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+            overflow: hidden;
+        }
+        
+        /* 左側欄位 */
+        aside {
+            background: var(--sidebar);
+            color: white;
+            width: 320px;
+            padding: 40px 30px;
+        }
+        
+        .photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid var(--accent);
+            margin: 0 auto 25px;
+            display: block;
+        }
+        
+        aside h1 {
+            font-size: 2.2em;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+        
+        aside h2 {
+            font-size: 1.8em;
+            color: var(--accent);
+            margin: 30px 0 15px;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 8px;
+        }
+        
+        aside ul {
+            list-style: none;
+        }
+        
+        aside li {
+            margin-bottom: 12px;
+            padding-left: 5px;
+            font-size: 1.02em;
+        }
+        
+        .skill-bar {
+            background: rgba(255,255,255,0.2);
+            height: 8px;
+            border-radius: 4px;
+            margin-top: 6px;
+            overflow: hidden;
+        }
+        
+        .skill-level {
+            background: var(--accent);
+            height: 100%;
+            border-radius: 4px;
+        }
+        
+        /* 右側主內容 */
+        main {
+            flex: 1;
+            padding: 45px 40px;
+            background: white;
+        }
+        
+        main h2 {
+            color: var(--sidebar);
+            font-size: 1.7em;
+            margin: 35px 0 20px;
+            border-left: 5px solid var(--accent);
+            padding-left: 15px;
+        }
+        
+        .job {
+            margin-bottom: 28px;
+        }
+        
+        .job h3 {
+            font-size: 1.25em;
+            color: var(--sidebar);
+        }
+        
+        .job .company {
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        .job .date {
+            font-size: 0.95em;
+            color: #888;
+            float: right;
+        }
+        
+        .job ul {
+            margin-top: 10px;
+            padding-left: 20px;
+        }
+        
+        .job li {
+            margin-bottom: 6px;
+        }
+        
+        .print-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-size: 1.1em;
+            cursor: pointer;
+            box-shadow: 0 6px 20px rgba(0,212,170,0.4);
+        }
+        
+        @media print {
+            body { background: white; }
+            .print-btn { display: none; }
+            .resume { box-shadow: none; margin: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="resume">
+        <!-- 左側欄位 -->
+        <aside>
+            <!-- 放自己的大頭照（建議正方形180x180以上） -->
+            <img src="https://via.placeholder.com/180" alt="大頭照" class="photo">
+            
+            <h1>黃柏翔</h1>
+            <p style="text-align:center; opacity:0.9;">亞洲大學 財務金融學系</p>
+            
+            <h2>聯絡資訊</h2>
+            <ul>
+                <li>✉️ your.email@asia.edu.tw</li>
+                <li>🔗 LinkedIn.com/in/你的名字</li>
+                <li>📍 台中市霧峰區</li>
+            </ul>
+            
+            <h2>專業技能</h2>
+            <ul>
+                <li>財務報表分析<div class="skill-bar"><div class="skill-level" style="width:90%"></div></div></li>
+                <li>Excel / VBA<div class="skill-bar"><div class="skill-level" style="width:85%"></div></div></li>
+                <li>Python 金融分析<div class="skill-bar"><div class="skill-level" style="width:80%"></div></div></li>
+                <li>Bloomberg / Wind<div class="skill-bar"><div class="skill-level" style="width:75%"></div></div></li>
+                <li>英文 TOEIC 880<div class="skill-bar"><div class="skill-level" style="width:88%"></div></div></li>
+            </ul>
+            
+            <h2>證照</h2>
+            <ul>
+                <li>證券商高級業務員</li>
+                <li>信託業務員</li>
+                <li>投資型保險商品銷售</li>
+                <li>金融市場常識與職業道德</li>
+            </ul>
+        </aside>
+        
+        <!-- 右側主內容 -->
+        <main>
+            <section>
+                <h2>求職目標</h2>
+                <p>目標進入投資銀行、證券分析、企業財務或私募股權領域，期許結合校內財務金融專業與實務經驗，為機構創造價值，並持續精進專業能力。</p>
+            </section>
+            
+            <section>
+                <h2>實習與工作經驗</h2>
+                <div class="job">
+                    <h3>富邦證券 投資銀行部 暑期實習生</h3>
+                    <span class="company">富邦綜合證券股份有限公司</span>
+                    <span class="date">2025.07 – 2025.08</span>
+                    <ul>
+                        <li>參與2件IPO專案，協助盡職調查與財務模型建置</li>
+                        <li>製作Pitch Book與產業比較分析報告</li>
+                        <li>協助估值（DCF、Comps）</li>
+                    </ul>
+                </div>
+                
+                <div class="job">
+                    <h3>玉山銀行 財富管理實習生</h3>
+                    <span class="company">玉山商業銀行</span>
+                    <span class="date">2024.07 – 2024.08</span>
+                    <ul>
+                        <li>協助理財專員管理超過50位高資產客戶</li>
+                        <li>參與基金、信託、海外債券銷售，月度業績達150%</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section>
+                <h2>學歷</h2>
+                <div class="job">
+                    <h3>亞洲大學 財務金融學系</h3>
+                    <span class="date">2022.09 – 2026.06（預計畢業）</span>
+                    <ul>
+                        <li>GPA 4.05 / 4.3（系排前5%）</li>
+                        <li>連續四年甲等獎學金</li>
+                        <li>校內證券分析競賽 第2名</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section>
+                <h2>校內活動與領導經驗</h2>
+                <ul>
+                    <li>亞大財金學會 會長（2024–2025）</li>
+                    <li>主辦「2025 全國大專財富管理案例競賽」亞洲大學代表隊，獲得全國第3名</li>
+                    <li>CFA Research Challenge 台灣賽區 參賽隊員</li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <button class="print-btn" onclick="window.print()">🖨️ 列印PDF</button>
+
+</body>
+</html>
